@@ -1,4 +1,4 @@
-"use strict";
+'use strict';
 
 const data = [
     {
@@ -42,3 +42,41 @@ en "section".
 */
 
 /* Comienza a escribir su código aquí */
+console.log(data);
+
+let cards = "";
+for(const pokemons of data){
+  cards += `
+  <article class = "card">
+        <img
+          src=${pokemons.thumbnail}
+          class="icon-type"
+          alt="icon type"
+        />
+        <p>
+          ${pokemons.name}
+        </p>
+      </article>
+ `
+}
+const section = document.querySelector("section");
+section.innerHTML = cards;
+
+const cambioFondo = document.querySelectorAll(".card")
+
+for(const fondo of cambioFondo ){
+  fondo.addEventListener("mouseover", function () {
+    fondo.classList.add("planta");
+   });
+}
+
+
+
+
+
+
+
+
+
+
+
